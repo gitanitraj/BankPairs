@@ -54,7 +54,7 @@ public abstract class Account {
     public void debit(Double amount) {
         // TODO: Implement debit method (remove money from account)
         // TODO: Record this transaction
-        if (amount > 0 && balance >= amount) {
+        if (amount > 0) {
             this.balance -= amount;
             transactionHistory.add("Debit: -" + amount + " | New Balance: " + this.balance);
             System.out.println("New Balance " + this.balance);
