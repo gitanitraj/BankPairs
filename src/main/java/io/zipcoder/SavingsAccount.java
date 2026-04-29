@@ -36,13 +36,11 @@ public class SavingsAccount extends Account {
     public void debit(Double amount) {
         // TODO: Implement debit method
         // Savings accounts have overdraft protection - don't allow balance to go negative
-        if (amount <= 0) {
-            throw new IllegalArgumentException("Debit amount must be positive");
+        if (amount > getBalance()) {
+            return;
         }
-        if (amount <= getBalance()) {
+        else {
             super.debit(amount);
-        } else {
-        
         }
     }
 }
